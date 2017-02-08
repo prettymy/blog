@@ -1,0 +1,40 @@
+<div>
+    <div class="input-group">
+        <span class="input-group-addon" id="sizing-addon2">标题：</span>
+        <input type="text" class="form-control" placeholder="title" aria-describedby="sizing-addon2" ng-model="title">
+    </div>
+    <div class="input-group" style="margin-top:20px;">
+        <span class="input-group-addon" id="sizing-addon">内容：</span>
+        <textarea class="form-control" placeholder="content" aria-describedby="sizing-addon2" ng-model="content"></textarea>
+    </div>
+    <div class="btn-group" role="group" aria-label="..." style="float:right;margin-top:20px;">
+        <button type="button" class="btn btn-default" ng-click="publish()">发表</button>
+    </div>
+    <div style="clear: both;margin-top:20px;">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="blog in blogdata">
+                <p>{{blog.title}}({{blog.time}})</p>
+                <p>{{blog.content}}</p>
+            </li>
+        </ul>
+    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

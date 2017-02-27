@@ -1,7 +1,7 @@
 /**
  * Created by lmy on 2017/1/28.
  */
-//Êı¾İ´¦Àí
+//æ•°æ®å¤„ç†
 var mongoose = require('mongoose');
 var mongoconnect = require('./index.js');
 var Schema = mongoose.Schema;
@@ -10,37 +10,58 @@ var userSchema = new Schema({
     password:String
 });
 var Users = mongoose.model('Users', userSchema);
-exports.insert = function(req,res){
-    var user = new Users(req.body);
-    console.log(req.body);
-    user.save(function(err,res){
+exports.insert = function(request,response){
+    var user = new Users(request.body);
+    Users.findOne({username:request.body.username},function(err,findres){
         if(err){
-            console.log('error:'+err);
+            console.log('error'+err);
         }else{
-            console.log(res);
+            if(!findres){
+                user.save(function(err,res){
+                    if(err){
+                        console.log('error:'+err);
+                    }else{
+                        response.end(JSON.stringify({
+                            status:'succ',
+                            message:'æ³¨å†ŒæˆåŠŸ'
+                        }));
+                    }
+                });
+            }else{
+                response.end(JSON.stringify({
+                    statu:"fail",
+                    message:'ç”¨æˆ·åå·²å­˜åœ¨'
+                }))
+            }
         }
-    });
+    })
+
 }
-//insert();
-exports.find = function(req,response){
-    Users.find(req.body,function(err,res){
+exports.find = function(request,response){
+    Users.findOne({username:request.body.username},function(err,res){
         if (err) {
             console.log("Error:" + err);
         }
-        else {
-            if(res){
-                var succdata = {
-                    status:'succ',
-                    message:'ÓÃ»§´æÔÚ'
-                }
-                response.end(JSON.stringify(succdata));
-                console.log('find res is'+res);
-            }else{
-                var faildata = {
+        else{
+            if(!res){
+                response.end(JSON.stringify({
                     status:'fail',
-                    message:'ÓÃ»§²»´æÔÚ'
+                    message:'ç”¨æˆ·ä¸å­˜åœ¨'
+                }));
+            }else{
+                var pass = res.password;
+                if(pass==request.body.password){
+                    response.end(JSON.stringify({
+                        status:'succ',
+                        message:'ç”¨æˆ·å­˜åœ¨'
+                    }));
                 }
-                response.end(JSON.stringify(faildata));
+                else{
+                    response.end(JSON.stringify({
+                        status:'fail',
+                        message:'å¯†ç æœ‰è¯¯!'}));
+                }
+                console.log('find res is'+res);
             }
 
         }

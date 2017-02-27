@@ -4,6 +4,7 @@
 var myBlogApp = angular.module('myBlogApp',['ui.router']);
 myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise('login')
+        .when('register','/register')
     $stateProvider
         .state('index', {
             url: '/index',
@@ -37,6 +38,24 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 }
             }
         })
+        .state('index.blogDetails', {
+            url: '/blogDetails?blogid',
+            views: {
+                'main@index': {
+                    templateUrl: 'assets/views/blogDetails.html',
+                    controller:'blogDetailsController'
+                }
+            }
+        })
+        .state('index.myfootprints',{
+            url:'/myfootprints',
+            view:{
+                'main@index':{
+                    templateUrl:'assets/views/footprints.html',
+                    controller:'footprintsController'
+                }
+            }
+        })
         .state('login',{
             url:"/login",
             templateUrl:'assets/views/login.html',
@@ -46,10 +65,5 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
             url:'/register',
             templateUrl:'assets/views/register.html',
             controller:'registerController'
-        })
-        .state('blog',{
-            url:'/blog',
-            templateUrl:'assets/views/blog.html',
-            controller:'blogController'
         })
 }]);

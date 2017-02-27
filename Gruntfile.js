@@ -115,7 +115,7 @@
                             src: ['./other/citypicker/CityPicker.js', './other/layer/layer.js'],
                             dest: './temp/other.js'
                         }, {
-                            src: ['./src/css/**.css'],
+                            src: ['./public/css/**.css'],
                             dest: './temp/main.css'
                         }
                     ]
@@ -132,7 +132,7 @@
                             src: ['./public/js/**.js',"./public/js/**/**.js"],
                             dest: './build/assets/js/app.js'
                         }, {
-                            src: ['./bower_components/bootstrap/dist/css/bootstrap.min.css', './src/css/**.css'],
+                            src: ['./bower_components/bootstrap/dist/css/bootstrap.min.css', './public/css/**.css'],
                             dest: './build/assets/css/main.css'
                         }
                     ]

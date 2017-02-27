@@ -13,8 +13,12 @@
     <div style="clear: both;margin-top:20px;">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="blog in blogdata">
-                <p>{{blog.title}}({{blog.time}})</p>
-                <p>{{blog.content}}</p>
+                <p class="icon" ng-click="blogdetails(blog.blogId)">{{blog.title}}({{blog.time}})</p>
+                <div style="float:right">
+                    <span class="glyphicon glyphicon-pencil icon" ng-click="blogedit(blog.blogId)"></span>
+                    <span class="glyphicon glyphicon-trash icon" ng-click="blogdel(blog.blogId)"></span>
+                </div>
+                <p style="width:80%" class="wordhide">{{blog.content}}</p>
             </li>
         </ul>
     </div>

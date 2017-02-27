@@ -10,5 +10,7 @@ module.exports = function(app){
     app.post('/register',user.insert);
     app.post('/find',user.find);
     app.post('/bloginsert',blog.insert);
-    app.get('/bloglist',blog.list);
+    app.post('/bloglist',blog.list);
+    app.post('/blogdel',blog.delete);
+    app.post('/oneblog',blog.findone);
 };

@@ -10,8 +10,13 @@ myBlogApp.controller('loginController',['$scope','transData','$state',function($
         transData.postData(data,'/find')
             .then(function(data){
                 if(data.status=='succ'){
+                    localStorage.setItem('username',$scope.username);
                     $state.go('index');
+
                 }
             })
+    };
+    $scope.goregist = function(){
+        $state.go('register');
     }
 }]);

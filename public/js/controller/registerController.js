@@ -1,7 +1,7 @@
 /**
  * Created by lmy on 2017/2/2.
  */
-myBlogApp.controller('registerController',['$scope','transData',function($scope,transData){
+myBlogApp.controller('registerController',['$scope','transData','$state',function($scope,transData,$state){
     $scope.register = function(){
         var data = {
             username:$scope.user.username,
@@ -10,13 +10,12 @@ myBlogApp.controller('registerController',['$scope','transData',function($scope,
         console.log(data);
         transData.postData(data,'/register')
             .then(function(data){
-                console.log(data);
+                if(data.status=='succ'){
+                    $state.go('login');
+                }
             })
     };
-    $scope.find = function(){
-        transData.getData('','/find')
-            .then(function(data){
-                console.log(data);
-            })
+    $scope.gologin = function(){
+        $state.go('login');
     };
 }]);

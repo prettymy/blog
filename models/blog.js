@@ -65,3 +65,14 @@ exports.findone = function(request,response){
         }
     })
 }
+exports.update = function(request,response){
+    console.log(request.body);
+    Blogs.update({blogId:request.body.blogId},{$set:{title:request.body.title,content:request.body.content,time:request.body.time}},function(err,res){
+        if(err){
+            console.log(err);
+        }else{
+            response.end(JSON.stringify(res));
+        }
+    })
+
+}

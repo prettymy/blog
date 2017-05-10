@@ -49,7 +49,7 @@ myBlogApp.controller('blogController',['$scope','transData','Date','Guid','$stat
     };
     //编辑文章
     $scope.blogedit = function(id){
-
+        $state.go('index.blogEdit',{blogid:id});
     };
     $scope.blogdetails = function(id){
         $state.go('index.blogDetails',{blogid:id});

@@ -17,15 +17,15 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                     controller:'navBarController'
                 },
                 'main@index': {
-                    templateUrl: 'assets/views/myWork.html',
+                    templateUrl: 'assets/views/main.html',
                 }
             }
         })
         .state('index.mywork', {
-            url: '/mywork',
+            url: '/index',
             views: {
                 'main@index': {
-                    templateUrl: 'assets/views/myWork.html',
+                    templateUrl: 'assets/views/main.html',
                 }
             }
         })
@@ -44,6 +44,15 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 'main@index': {
                     templateUrl: 'assets/views/blogDetails.html',
                     controller:'blogDetailsController'
+                }
+            }
+        })
+        .state('index.blogEdit', {
+            url: '/blogEdit?blogid',
+            views: {
+                'main@index': {
+                    templateUrl: 'assets/views/blogEdit.html',
+                    controller:'blogEditController'
                 }
             }
         })

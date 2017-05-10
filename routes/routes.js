@@ -10,6 +10,7 @@ module.exports = function(app){
     app.post('/register',user.insert);
     app.post('/find',user.find);
     app.post('/bloginsert',blog.insert);
+    app.post('/blogupdate',blog.update);
     app.post('/bloglist',blog.list);
     app.post('/blogdel',blog.delete);
     app.post('/oneblog',blog.findone);

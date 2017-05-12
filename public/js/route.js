@@ -18,6 +18,17 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 },
                 'main@index': {
                     templateUrl: 'assets/views/main.html',
+                },
+                'left@index': {
+                    templateUrl: 'assets/views/left.html',
+                },
+            }
+        })
+        .state('index.main', {
+            url: '/index',
+            views: {
+                'main@index': {
+                    templateUrl: 'assets/views/main.html',
                 }
             }
         })
@@ -35,6 +46,14 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 'main@index': {
                     templateUrl: 'assets/views/blog.html',
                     controller:'blogController'
+                }
+            }
+        })
+        .state('index.message', {
+            url: '/message',
+            views: {
+                'main@index': {
+                    templateUrl: 'assets/views/message.html',
                 }
             }
         })

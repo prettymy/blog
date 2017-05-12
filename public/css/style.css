@@ -15,3 +15,13 @@ a {
     overflow:hidden;
     text-overflow:ellipsis;
 }
+.ui-view-main{
+    width:65%;
+    float:left;
+    margin-left:6%;
+}
+.ui-view-left{
+    width:20%;
+    float:left;
+    margin-left:5%;
+}

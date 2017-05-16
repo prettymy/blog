@@ -8,5 +8,7 @@ myBlogApp.controller('blogDetailsController',['$scope','$stateParams','transData
             $scope.title = res.title;
             $scope.time = res.time;
             $scope.content = res.content;
+            $scope.type = res.type;
+            $scope.author = res.author;
         });
 }])

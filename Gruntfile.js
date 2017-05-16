@@ -59,6 +59,9 @@
                             src: './bower_components/angular/angular.js',
                             dest: './build/assets/js/angular.min.js'
                         }, {
+                            src: './bower_components/tendina.min.js',
+                            dest: './build/assets/js/tendina.min.js'
+                        }, {
                             src: './public/js/app.js',
                             dest: './build/assets/js/app.js'
                         }, {
@@ -101,6 +104,9 @@
                         }, {
                             src: './bower_components/jquery/dist/jquery.min.js',
                             dest: './dist/assets/js/jquery.min.js'
+                        }, {
+                            src: './bower_components/tendina.min.js',
+                            dest: './dist/assets/js/tendina.min.js'
                         }
                     ]
                 }

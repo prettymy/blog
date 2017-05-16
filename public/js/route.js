@@ -18,6 +18,7 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 },
                 'main@index': {
                     templateUrl: 'assets/views/main.html',
+                    controller:'mainController'
                 },
                 'left@index': {
                     templateUrl: 'assets/views/left.html',
@@ -29,6 +30,7 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
             views: {
                 'main@index': {
                     templateUrl: 'assets/views/main.html',
+                    controller:'mainController'
                 }
             }
         })
@@ -93,5 +95,50 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
             url:'/register',
             templateUrl:'assets/views/register.html',
             controller:'registerController'
+        })
+        .state('mindex', {
+            url: '/mindex',
+            views: {
+                '':{
+                    templateUrl: 'assets/views/manageIndex.html'
+                },
+                'mnavbar@mindex': {
+                    templateUrl: 'assets/views/mnavbar.html',
+                },
+                'mleft@mindex': {
+                    templateUrl: 'assets/views/mleft.html',
+                },
+                'mright@mindex': {
+                    templateUrl: 'assets/views/aboutBlog.html',
+                   /* controller:'blogManagerController'*/
+                },
+            }
+        })
+        .state('mindex.aboutBlog', {
+            url: '/mindex.aboutBlog',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/aboutBlog.html',
+                    /* controller:'blogManagerController'*/
+                },
+            }
+        })
+        .state('mindex.blogManager', {
+            url: '/mindex.blogManage',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/blogManager.html',
+                     controller:'blogManagerController'
+                },
+            }
+        })
+        .state('mindex.editBlog', {
+            url: '/mindex.editBlog?blogid',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/editBlog.html',
+                    controller:'editBlogController'
+                },
+            }
         })
 }]);

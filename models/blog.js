@@ -5,10 +5,12 @@ var mongoose = require('mongoose');
 var mongoconnect = require('./index.js');
 var Schema = mongoose.Schema;
 var blogSchema = new Schema({
-    username:String,
     title:String,
     content:String,
+    type:String,
+    isChecked:String,
     time:String,
+    author:String,
     blogId:String
 });
 var Blogs = mongoose.model('Blogs', blogSchema);
@@ -33,7 +35,17 @@ exports.insert = function(request,response){
 }
 //insert();
 exports.list = function(request,response){
-    Blogs.find({username:request.body.username},function(err,res){
+/*    console.log(request.body);
+    Blogs.find().toArray(function(err,res){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else{
+            console.log(res);
+            response.end(JSON.stringify(res));
+        }
+    });*/
+    Blogs.find(function(err,res){
         if (err) {
             console.log("Error:" + err);
         }

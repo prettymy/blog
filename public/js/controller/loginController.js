@@ -11,7 +11,7 @@ myBlogApp.controller('loginController',['$scope','transData','$state',function($
             .then(function(data){
                 if(data.status=='succ'){
                     localStorage.setItem('username',$scope.username);
-                    $state.go('index');
+                    $state.go('mindex');
 
                 }
             })

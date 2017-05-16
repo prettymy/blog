@@ -1,25 +1,9 @@
-<div class="list-group">
-    <a href="#" class="list-group-item active">
-        <h4 class="list-group-item-heading">河北秦皇岛市税务局固定资产管理系统</h4>
-        <p class="list-group-item-text">该项目主要为对税务局现有的资产进行分权限管理。我在该项目中负责前端页面的开发，此
-            系统整体风格采用传统的后台管理系统风格，以菜单栏及表格、表单为主，使用frameset对
-            整体布局，使用HTML、CSS写静态页面，使用JavaScript实现动态交互效果，使用 AJAX对
-            后台异步请求数据，与后台人员结合共同完成该系统的开发。</p>
-        <p> 开发技术：HTML、CSS、JavaScript 、AJAX、jQuery</p>
-    </a>
-    <a href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">河北秦皇岛市昌黎县委办公自动化系统</h4>
-        <p class="list-group-item-text">该项目实现办公系统的自动化，便捷化。我在该项目中负责前端页面的开发，采用淡色系风格，以表单、表格、菜单栏为主，使用显示表格数据的jqGrid插件实现前端页面与后台数据的AJAX异步通信，使用HTML、CSS写静态页面，使用JavaScript、jQuery实现动态交互效果，与				  后台人员结合共同完成该系统的开发。此较大项目的开发使我体会到使用框架的方便及效率，以及与大牛合作能够学到很多不知道的知识，当然在开发此类项目的同时要打牢基础知识</p>
-        <p>开发技术：HTML、CSS、JavaScript、AJAX、jqGrid、OperaMasks、jQuery</p>
-    </a>
-    <a href="http://www.y-dun.com" class="list-group-item">
-        <h4 class="list-group-item-heading">优盾商城网站</h4>
-        <p class="list-group-item-text">该网站为优盾品牌的官网，与小型的电子商务平台类似。我在该项目中担任前端页面的开发, 根据用户提供的设计图，用编码实现静态页面及动态交互效果</p>
-        <p>开发技术：HTML、CSS、JavaScript、AJAX、jQuery</p>
-    </a>
-    <a href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">基于IOS的旅游导航系统</h4>
-        <p class="list-group-item-text">该项目为基于IOS系统的旅游导航APP，使用Swift与Object-C混合开发，我在该项目中负责对界面的实现，以及各界面间的跳转，并代表团队进行“华北五省及港澳台自治区计算机				   应用大赛”的决赛答辩。此项目与前端开发没有太大关系，但是我通过自学Swift能够实现				   一些简单功能，提高了我的自学能力，并通过答辩演讲提高了综合素质</p>
-        <p>开发技术：Swift、Object-C</p>
+<div class="list-group" ng-repeat="blog in bloglist">
+    <a ng-click="blogdetails(blog.blogId)" class="list-group-item active">
+        <h4 class="list-group-item-heading">{{blog.title}}</h4>
+        <span>{{blog.author}}--</span>
+        <span>{{blog.type}}--</span>
+        <span>{{blog.time}}</span>
+        <p class="list-group-item-text list-content">{{blog.content}}</p>
     </a>
 </div>

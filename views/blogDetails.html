@@ -14,3 +14,14 @@
         {{content}}
     </div>
 </div>
+<span class="label label-default">评论区</span>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="comment in commentdata">{{comment.content}}---{{comment.time}}</li>
+</ul>
+<div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">评论</span>
+    <input type="text" class="form-control" placeholder="comment" aria-describedby="sizing-addon1" ng-model="comment">
+</div>
+<div class="btn-group" role="group" aria-label="..." style="float:right;margin-top:20px;">
+    <button type="button" class="btn btn-default" ng-click="submit()">发表</button>
+</div>

@@ -141,4 +141,13 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 },
             }
         })
+        .state('mindex.messageManger', {
+            url: '/mindex.messageManger',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/messageManger.html',
+                    controller:'messageManagerController'
+                },
+            }
+        })
 }]);

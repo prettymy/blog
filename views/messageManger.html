@@ -1,0 +1,31 @@
+<div>
+    <span class="cp_title">留言管理</span>
+    <!--<div class="add_cp">
+        <a href="../addBlog.html">添加博文</a>
+    </div>-->
+    <div class="table_con">
+        <table>
+            <tr class="tb_title">
+                <td>留言文章</td>
+                <td>内容</td>
+                <td>发布时间</td>
+                <td>操作</td>
+            </tr>
+            <!-- <tbody id="blogList">
+
+             </tbody>-->
+            <tr ng-repeat="message in messagelist">
+                <td>{{message.title}}</td>
+                <td>{{message.content}}</td>
+                <td>{{message.time}}</td>
+                <td>
+                    <a class='sj_btn' ng-click="messageDetails(message.blogId)">查看</a>
+                    <a class='del_btn' ng-click="messageDel(message.messageId)">删除</a>
+                </td>
+            </tr>
+        </table>
+        <ul class="pager" id="pager">
+        </ul>
+        <br>
+    </div>
+</div>

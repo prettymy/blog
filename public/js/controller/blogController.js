@@ -12,7 +12,6 @@ myBlogApp.controller('blogController',['$scope','transData','Date','Guid','$stat
         })
     //发表文章publish
     $scope.publish = function(){
-        console.log('dsd');
         var nowtime = Date.getNowFormatDate();
         var data = {
             title:$scope.title,
@@ -23,7 +22,6 @@ myBlogApp.controller('blogController',['$scope','transData','Date','Guid','$stat
             blogId:Guid.Guid(),
             isChecked:'false'
         }
-        console.log(data);
         transData.postData(data,'/bloginsert')
             .then(function(res){
                 console.log(data)

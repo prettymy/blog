@@ -32,7 +32,7 @@ myBlogApp.controller('blogManagerController',['$scope','transData','Date','Guid'
     $scope.blogedit = function(id){
         $state.go('mindex.editBlog',{blogid:id});
     };
-    $scope.blogdetails = function(id){
+    $scope.mblogdetails = function(id){
         $state.go('index.blogDetails',{blogid:id});
     }
 }]);

@@ -27,7 +27,7 @@
             <td width="10%" ng-if="blog.isChecked=='true'">已审核</td>
             <td width="26%">
                 <a class='bj_btn' ng-click="blogedit(blog.blogId)">编辑</a>
-                <a class='sj_btn' >查看</a>
+                <a class='sj_btn' ng-click="mblogdetails(blog.blogId)">查看</a>
                 <a class='del_btn' ng-click="blogdel(blog.blogId)">删除</a>
             </td>
         </tr>

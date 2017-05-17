@@ -6,8 +6,11 @@
     <file url="file://$PROJECT_DIR$/models/blog.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/models/user.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/css/mindex.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/controller/blogDetailsController.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/js/controller/blogManagerController.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/controller/messageManagerController.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/js/route.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/blogDetails.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/login.html" charset="UTF-8" />
   </component>
 </project>

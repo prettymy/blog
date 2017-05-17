@@ -35,16 +35,6 @@ exports.insert = function(request,response){
 }
 //insert();
 exports.list = function(request,response){
-/*    console.log(request.body);
-    Blogs.find().toArray(function(err,res){
-        if (err) {
-            console.log("Error:" + err);
-        }
-        else{
-            console.log(res);
-            response.end(JSON.stringify(res));
-        }
-    });*/
     Blogs.find(function(err,res){
         if (err) {
             console.log("Error:" + err);

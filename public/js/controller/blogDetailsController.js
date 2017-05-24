@@ -9,6 +9,10 @@ myBlogApp.controller('blogDetailsController',['$scope','$stateParams','Date','Gu
             $scope.content = res.content;
             $scope.type = res.type;
             $scope.author = res.author;
+            transData.postData({blogId:$stateParams.blogid,pageView:res.pageView+1},'/pageviewupdate')
+                .then(function(res){
+                    console.log(res);
+                })
             transData.postData({blogId:$stateParams.blogid},'/messagelist')
                 .then(function(res){
                     $scope.commentdata = res;

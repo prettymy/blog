@@ -11,8 +11,9 @@
             <td width="10%">作者</td>
             <td width="12%">发布时间</td>
             <td width="10%">内容</td>
+            <td width="10%">浏览量</td>
             <td width="10%">审核状态</td>
-            <td width="26%">操作</td>
+            <td width="16%">操作</td>
         </tr>
        <!-- <tbody id="blogList">
 
@@ -23,12 +24,15 @@
             <td width="10%">{{blog.author}}</td>
             <td width="12%">{{blog.time}}</td>
             <td width="10%">{{blog.content}}</td>
+            <td width="10%">{{blog.pageView}}</td>
             <td width="10%" ng-if="blog.isChecked=='false'">未审核</td>
             <td width="10%" ng-if="blog.isChecked=='true'">已审核</td>
-            <td width="26%">
-                <a class='bj_btn' ng-click="blogedit(blog.blogId)">编辑</a>
-                <a class='sj_btn' ng-click="mblogdetails(blog.blogId)">查看</a>
-                <a class='del_btn' ng-click="blogdel(blog.blogId)">删除</a>
+            <td width="16%">
+                <span class="glyphicon glyphicon-pencil" ng-click="blogedit(blog.blogId)"></span>
+               <!-- <a class='bj_btn' ng-click="blogedit(blog.blogId)">编辑</a>-->
+                <span class='glyphicon glyphicon-list-alt' ng-click="mblogdetails(blog.blogId)"></span>
+                <span class='glyphicon glyphicon-trash' ng-click="blogdel(blog.blogId)"></span>
+                <a class=""></a>
             </td>
         </tr>
     </table>

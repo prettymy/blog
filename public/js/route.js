@@ -150,4 +150,41 @@ myBlogApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,
                 },
             }
         })
+        .state('mindex.blogExamine', {
+            url: '/mindex.blogExamine',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/blogExamine.html',
+                    controller:'blogExamineController'
+                },
+            }
+        })
+        .state('mindex.blogYesExamine', {
+            url: '/mindex.blogYesExamine',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/blogYesExamine.html',
+                    controller:'blogYesExamineController'
+                },
+            }
+        })
+        .state('mindex.blogNoExamine', {
+            url: '/mindex.blogNoExamine',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/blogNoExamine.html',
+                    controller:'blogNoExamineController'
+                },
+            }
+        })
+        .state('mindex.blogEssence', {
+            url: '/mindex.blogEssence',
+            views: {
+                'mright@mindex': {
+                    templateUrl: 'assets/views/blogEssence.html',
+                    controller:'blogEssenceController'
+                },
+            }
+        })
+
 }]);

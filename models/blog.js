@@ -11,7 +11,10 @@ var blogSchema = new Schema({
     isChecked:String,
     time:String,
     author:String,
-    blogId:String
+    blogId:String,
+    pageView:Number,
+    isPass:String,
+    isEssence:String
 });
 var Blogs = mongoose.model('Blogs', blogSchema);
 exports.insert = function(request,response){
@@ -45,6 +48,40 @@ exports.list = function(request,response){
         }
     });
 }
+exports.passlist = function(request,response){
+    Blogs.find({isPass:'true'},function(err,res){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else{
+            console.log(res);
+            response.end(JSON.stringify(res));
+        }
+    });
+}
+exports.unpasslist = function(request,response){
+    Blogs.find({isPass:'false'},function(err,res){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else{
+            console.log(res);
+            response.end(JSON.stringify(res));
+        }
+    });
+}
+exports.essencelist = function(request,response){
+    Blogs.find({isEssence:'true'},function(err,res){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else{
+            console.log(res);
+            response.end(JSON.stringify(res));
+        }
+    });
+}
+
 exports.delete = function(request,response){
     console.log(request.body);
     Blogs.remove({blogId:request.body.blogId},function(err,res){
@@ -76,5 +113,31 @@ exports.update = function(request,response){
             response.end(JSON.stringify(res));
         }
     })
-
+}
+exports.updatePageView = function(request,response){
+    Blogs.update({blogId:request.body.blogId},{$set:{pageView:request.body.pageView}},function(err,res){
+        if(err){
+            console.log(err);
+        }else{
+            response.end(JSON.stringify(res));
+        }
+    })
+}
+exports.updateIsPass = function(request,response){
+    Blogs.update({blogId:request.body.blogId},{$set:{isPass:request.body.isPass,isChecked:request.body.isChecked}},function(err,res){
+        if(err){
+            console.log(err);
+        }else{
+            response.end(JSON.stringify(res));
+        }
+    })
+}
+exports.updateIsEssence = function(request,response){
+    Blogs.update({blogId:request.body.blogId},{$set:{isEssence:request.body.isEssence}},function(err,res){
+        if(err){
+            console.log(err);
+        }else{
+            response.end(JSON.stringify(res));
+        }
+    })
 }

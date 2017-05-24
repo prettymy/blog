@@ -15,8 +15,15 @@ module.exports = function(app){
     app.post('/bloglist',blog.list);
     app.post('/blogdel',blog.delete);
     app.post('/oneblog',blog.findone);
+    app.post('/pageviewupdate',blog.updatePageView);
     app.post('/messagelist',message.list);
     app.post('/allmessagelist',message.alllist);
     app.post('/messageinsert',message.insert);
     app.post('/messagedel',message.delete);
+    app.post('/blogispass',blog.updateIsPass);
+    app.post('/blogisessence',blog.updateIsEssence);
+    app.post('/blogpasslist',blog.passlist);
+    app.post('/blogunpasslist',blog.unpasslist);
+    app.post('/blogessencelist',blog.essencelist);
+
 };

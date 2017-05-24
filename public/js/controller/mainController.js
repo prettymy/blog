@@ -18,6 +18,7 @@ myBlogApp.controller('mainController',['$scope','transData','Date','$stateParams
         });
     //ндубоЙгИ
     $scope.blogdetails = function(id){
+
         $state.go('index.blogDetails',{blogid:id});
     }
 

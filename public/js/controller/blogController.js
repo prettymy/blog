@@ -20,7 +20,10 @@ myBlogApp.controller('blogController',['$scope','transData','Date','Guid','$stat
             time:nowtime,
             author:$scope.author,
             blogId:Guid.Guid(),
-            isChecked:'false'
+            isChecked:'false',
+            pageView:0,
+            isPass:'false',
+            isEssence:'false'
         }
         transData.postData(data,'/bloginsert')
             .then(function(res){

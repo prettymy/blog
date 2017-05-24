@@ -1,0 +1,36 @@
+<div>
+    <span class="cp_title">博文管理</span>
+    <!--<div class="add_cp">
+        <a href="../addBlog.html">添加博文</a>
+    </div>-->
+    <div class="table_con">
+        <table>
+            <tr class="tb_title">
+                <td width="10%">类别</td>
+                <td width="15%">题目</td>
+                <td width="10%">作者</td>
+                <td width="12%">发布时间</td>
+                <td width="10%">内容</td>
+                <td width="10%">浏览量</td>
+                <td width="26%">是否通过</td>
+            </tr>
+            <!-- <tbody id="blogList">
+
+             </tbody>-->
+            <tr ng-repeat="blog in bloglist">
+                <td width="10%">{{blog.type}}</td>
+                <td width="15%">{{blog.title}}</td>
+                <td width="10%">{{blog.author}}</td>
+                <td width="12%">{{blog.time}}</td>
+                <td width="10%">{{blog.content}}</td>
+                <td width="10%">{{blog.pageView}}</td>
+                <td width="26%">
+                    <a class='bj_btn'>未通过</a>
+                </td>
+            </tr>
+        </table>
+        <ul class="pager" id="pager">
+        </ul>
+        <br>
+    </div>
+</div>

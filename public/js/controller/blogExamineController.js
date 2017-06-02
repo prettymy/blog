@@ -21,12 +21,29 @@ myBlogApp.controller('blogExamineController',['$scope','transData','Date','Guid'
                        isPass:'false',
                        isChecked:'true'
                    }
+                   var mailOptions = {
+                       from: '836718437@qq.com', // 发件地址
+                       to: 'lmyuan93@163.com', // 收件列表
+                       subject: '小博通知', // 标题
+                       //text和html两者只支持一种
+                       text: '小博通知', // 标题
+                       html: '<b>您在小博上发布的文章，经管理员审核后发现内容不符合博文发布规定，请按照规定重新发布，谢谢~</b>' // html 内容
+                   };
+
                }else{
                    var updatedata = {
                        blogId:id,
                        isPass:'true',
                        isChecked:'true'
                    }
+                   var mailOptions = {
+                       from: '836718437@qq.com', // 发件地址
+                       to: 'lmyuan93@163.com', // 收件列表
+                       subject: '小博通知', // 标题
+                       //text和html两者只支持一种
+                       text: '小博通知', // 标题
+                       html: '<b>恭喜您待发布的文章通过了小博管理员的审核！</b>' // html 内容
+                   };
                }
            }
        }
@@ -37,7 +54,12 @@ myBlogApp.controller('blogExamineController',['$scope','transData','Date','Guid'
                        $scope.bloglist = data;
                    })
            })
+       transData.postData(mailOptions,'/sendmail')
+           .then(function(data){
+               console.log('邮件发送');
+           })
    }
+
     $scope.blogessence = function(id){
         for(var i=0;i<$scope.bloglist.length;i++){
             if(id==$scope.bloglist[i].blogId){

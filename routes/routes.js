@@ -4,7 +4,8 @@
 var index = require('./index');
 var user = require('../models/user');
 var blog = require('../models/blog');
-var message = require('../models/message')
+var message = require('../models/message');
+var nodemailer = require('../models/nodemailer');
 //var comment = require('./comment');
 module.exports = function(app){
     app.get('/',index.index);
@@ -25,5 +26,6 @@ module.exports = function(app){
     app.post('/blogpasslist',blog.passlist);
     app.post('/blogunpasslist',blog.unpasslist);
     app.post('/blogessencelist',blog.essencelist);
+    app.post('/sendmail',nodemailer.sendmail);
 
 };

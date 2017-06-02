@@ -20,7 +20,7 @@ myBlogApp.controller('blogEssenceController',['$scope','transData','Date','Guid'
             if(id==$scope.bloglist[i].blogId){
                 var updatedata = {
                     blogId:id,
-                    isEssence:'false',
+                    isEssence:'false'
                 }
             }
         }

@@ -27,5 +27,11 @@ module.exports = function(app){
     app.post('/blogunpasslist',blog.unpasslist);
     app.post('/blogessencelist',blog.essencelist);
     app.post('/sendmail',nodemailer.sendmail);
-
+    app.post('/blurfind',blog.blurfind);
+    app.post('/findtype',blog.findtype);
+    app.get('/error',blog.error);
+    app.post('/datalength',blog.datalength);
+    app.post('/systemlist',message.systemlist);
+    app.post('/blogmlist',message.bloglist);
+    /*app.post('/assets/ueditor',blog.ueditor);*/
 };

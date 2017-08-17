@@ -13,11 +13,18 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="float:none">
                 <li class="active"><a ui-sref="index.main">主页 <span class="sr-only">(current)</span></a></li>
                 <li><a ui-sref="index.blog">写博文 <span class="sr-only">(current)</span></a></li>
-                <li><a ui-sref="index.message">联系站长 <span class="sr-only">(current)</span></a></li>
-                <li><a ui-sref="index.myfootprints">我的足迹</a></li>
+                <li><a ui-sref="index.message">网站留言 <span class="sr-only">(current)</span></a></li>
+                <div>
+                    <img src="assets/images/erwei.jpg" id='weiimg' alt="小博" style="width: 100px;height: 100px;z-index: 100;position: absolute;top: 47px;left: 285px;display:none"/>
+                </div>
+                <li id="link" style="cursor: pointer"><a>联系站长 <span class="sr-only">(current)</span></a></li>
+                <div class="input-group" style="margin-top:8px;">
+                    <input type="text" class="form-control" style="width:300px" placeholder="search blog" aria-describedby="basic-addon2" ng-model="searchtitle">
+                    <span class="input-group-addon" id="basic-addon2" style="width:53px;cursor: pointer" ng-click="search()">搜索</span>
+                </div>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

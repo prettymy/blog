@@ -2,10 +2,14 @@
  * Created by lmy on 2017/4/3.
  */
 myBlogApp.controller('blogEditController',['$scope','transData','Date','$stateParams','$state',function($scope,transData,Date,$stateParams,$state){
+    var ue = UE.getEditor('editor',{
+        initialFrameWidth : 879
+    });
     transData.postData({blogId:$stateParams.blogid},'/oneblog')
         .then(function(res){
             $scope.title = res.title;
-            $scope.content = res.content;
+            UE.getEditor('editor').setContent(res.content);
+            /*$('.editcontent').append(res.content);*/
             $('.cedit').focus();
         });
     //¸üÐÂÎÄÕÂ

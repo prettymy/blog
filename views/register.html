@@ -1,8 +1,65 @@
-<div>
+<!--<div>
     <form ng-submit="register()">
         用户名：<input type="text" ng-model='user.username' name="username"/>
         密码：<input type="text" ng-model='user.password' name="password"/>
         <input type="submit" value="注册"/>
     </form>
     <input type="button" value="登录" ng-click="gologin()"/>
+</div>-->
+
+<div class="login_body" style="height:100%">
+    <h1 style="margin:0px;padding-top:100px;">个人博客后台登录<sup>V2017</sup></h1>
+
+    <div class="login" style="margin-top:50px;">
+
+        <div class="header">
+            <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">快速注册</a>
+               <div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
+            </div>
+        </div>
+
+
+        <div class="web_qr_login" id="web_qr_login" style="display: block; height: 265px;">
+
+            <!--登录-->
+            <div class="web_login" id="web_login">
+
+
+                <div class="login-box">
+
+
+                    <div class="login_form">
+                        <form ng-submit="register()" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post">
+                            <div id="userLoginCue" class="cue">请按规范格式输入</div>
+                            <input type="hidden" name="did" value="0"/>
+                            <input type="hidden" name="to" value="log"/>
+                            <div class="uinArea" id="uinArea">
+                                <label class="input-tips" for="u">帐号：</label>
+                                <div class="inputOuter" id="uArea">
+                                    <input type="text" id="u" name="username" class="inputstyle" ng-model='user.username'/>
+                                </div>
+                            </div>
+                            <div class="pwdArea" id="pwdArea">
+                                <label class="input-tips" for="p">密码：</label>
+                                <div class="inputOuter" id="pArea">
+
+                                    <input type="password" id="p" name="p" class="inputstyle" ng-model='user.password'/>
+                                </div>
+                            </div>
+
+                            <div style="padding-left:50px;margin-top:20px;"><input type="submit" id="loginbtn" value="注册" style="width:100px;" class="button_blue"/></div>
+                        </form>
+                        <div style="padding-left:50px;margin-top:20px;"><input type="submit"  value="登录" style="width:100px;margin-left:10px " class="button_blue" ng-click="gologin()"/></div>
+                        <!--<input type="button" value="注册" ng-click="goregist()"/>-->
+                    </div>
+
+                </div>
+
+            </div>
+            <!--登录end-->
+        </div>
+
+
+    </div>
+    <div class="jianyi">*推荐使用ie8或以上版本ie浏览器或Chrome内核浏览器访问本站</div>
 </div>

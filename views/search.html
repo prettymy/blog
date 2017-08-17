@@ -1,0 +1,12 @@
+<div class="list-group" ng-repeat="blog in bloglist">
+    <a ng-click="blogdetails(blog.blogId)" class="list-group-item active">
+        <h4 class="list-group-item-heading">{{blog.title}}</h4>
+        <span>{{blog.author}}--</span>
+        <span>{{blog.type}}--</span>
+        <span>{{blog.time}}</span>
+        <p class="list-group-item-text list-content">{{blog.content}}</p>
+    </a>
+</div>
+<div class="noresult" style="display:none ">
+    暂无查询结果
+</div>

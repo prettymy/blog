@@ -56,11 +56,19 @@
                             src: ['./views/*.html'],
                             dest: './build/assets'
                         }, {
+                            expand: true,
+                            cwd: './bower_components',
+                            src: ['ueditor/**/*.*'],
+                            dest: './build/assets'
+                        }, {
                             src: './bower_components/angular/angular.js',
                             dest: './build/assets/js/angular.min.js'
                         }, {
                             src: './bower_components/tendina.min.js',
                             dest: './build/assets/js/tendina.min.js'
+                        }, {
+                            src: './bower_components/wangEditor.min.js',
+                            dest: './build/assets/js/wangEditor.min.js'
                         }, {
                             src: './public/js/app.js',
                             dest: './build/assets/js/app.js'
@@ -107,6 +115,9 @@
                         }, {
                             src: './bower_components/tendina.min.js',
                             dest: './dist/assets/js/tendina.min.js'
+                        },{
+                            src: './bower_components/wangEditor.min.js',
+                            dest: './build/assets/js/wangEditor.min.js'
                         }
                     ]
                 }
@@ -132,12 +143,15 @@
                             src: ['./bower_components/angular-ui-router/release/angular-ui-router.min.js'],
                             dest: './build/assets/js/angular-widget.min.js'
                         }, {
-                            src: ['./bower_components/bootstrap/dist/js/bootstrap.min.js','./utf8-php/ueditor.config.js','./utf8-php/ueditor.all.min.js','./utf8-php/lang/zh-cn/zh-cn.js'],
+                            src: ['./bower_components/bootstrap/dist/js/bootstrap.min.js','./bower_components/bootstrap/dist/js/bootstrap-paginator.js','./ueditor/ueditor.config.js','./ueditor/ueditor.all.min.js','./ueditor/lang/zh-cn/zh-cn.js'],
                             dest: './build/assets/js/other.min.js'
                         }, {
                             src: ['./public/js/**.js',"./public/js/**/**.js"],
                             dest: './build/assets/js/app.js'
-                        }, {
+                        },{
+                            src: './bower_components/wangEditor.min.js',
+                            dest: './build/assets/js/wangEditor.min.js'
+                        },{
                             src: ['./bower_components/bootstrap/dist/css/bootstrap.min.css', './public/css/**.css'],
                             dest: './build/assets/css/main.css'
                         }

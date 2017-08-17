@@ -1,18 +1,17 @@
 <div>
-    <span class="cp_title">博文管理</span>
-    <!--<div class="add_cp">
-        <a href="../addBlog.html">添加博文</a>
-    </div>-->
+    <span class="cp_title">博文审核</span>
+    <div class="input-group" style="margin-top:8px;float: right">
+        <input type="text" class="form-control" style="width:300px" placeholder="search blog" aria-describedby="basic-addon2" ng-model="searchtitle"><span class="input-group-addon" id="basic-addon2" style="width:53px;cursor: pointer" ng-click="search()">搜索</span>
+    </div>
     <div class="table_con">
-        <table>
-            <tr class="tb_title">
+        <table class="table table-hover">
+            <tr>
                 <td width="10%">类别</td>
                 <td width="15%">题目</td>
-                <td width="10%">作者</td>
-                <td width="12%">发布时间</td>
-                <td width="10%">内容</td>
-                <td width="10%">浏览量</td>
-                <td width="26%">操作</td>
+                <td width="15%">作者</td>
+                <td width="15%">发布时间</td>
+                <td width="15%">浏览量</td>
+                <td width="30%">操作</td>
             </tr>
             <!-- <tbody id="blogList">
 
@@ -20,21 +19,21 @@
             <tr ng-repeat="blog in bloglist">
                 <td width="10%">{{blog.type}}</td>
                 <td width="15%">{{blog.title}}</td>
-                <td width="10%">{{blog.author}}</td>
-                <td width="12%">{{blog.time}}</td>
-                <td width="10%">{{blog.content}}</td>
-                <td width="10%">{{blog.pageView}}</td>
-                <td width="26%">
-                    <a class='bj_btn' ng-click="blogexamine(blog.blogId)" ng-show="blog.isPass=='false'">审核通过</a>
-                    <a class='bj_btn' ng-click="blogexamine(blog.blogId)" ng-show="blog.isPass=='true'">取消通过</a>
+                <td width="15%">{{blog.author}}</td>
+                <td width="15%">{{blog.time}}</td>
+                <td width="15%">{{blog.pageView}}</td>
+                <td width="30%">
+                    <!--<span class='glyphicon glyphicon-list-alt' ng-click="mblogdetails(blog.blogId)"></span>-->
+                    <a class='sj_btn' ng-click="blogexamine(blog.blogId)" ng-show="blog.isPass=='false'" style="width: 60px;height:30px;margin-left:65px">审核通过</a>
+                    <a class='sj_btn' ng-click="blogexamine(blog.blogId)" ng-show="blog.isPass=='true'" style="width: 60px;height:30px;margin-left:65px">取消通过</a>
 
-                    <a class='bj_btn' ng-click="blogessence(blog.blogId)" ng-show="blog.isEssence=='false'">设为精品</a>
-                    <a class='bj_btn' ng-click="blogessence(blog.blogId)" ng-show="blog.isEssence=='true'">取消精品</a>
+                    <a class='sj_btn' ng-click="blogessence(blog.blogId)" ng-show="blog.isEssence=='false'" style="width: 60px;height:30px;">设为精品</a>
+                    <a class='sj_btn' ng-click="blogessence(blog.blogId)" ng-show="blog.isEssence=='true'" style="width: 60px;height:30px;">取消精品</a>
+                    <a class="sj_btn" ng-click="mblogdetails(blog.blogId)" style="width: 60px;height:30px;">查看详情</a>
                 </td>
             </tr>
         </table>
-        <ul class="pager" id="pager">
-        </ul>
+        <my-pagination page-option="option"></my-pagination>
         <br>
     </div>
 </div>

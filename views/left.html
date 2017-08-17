@@ -6,9 +6,7 @@
             </div>
         </div>
         <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item" ng-repeat="latest in list track by $index " ng-click="blogdetails(latest.blogId)" style="cursor: pointer">{{latest.title}}</li>
         </ul>
     </div>
     <div class="left_essence">
@@ -18,9 +16,7 @@
             </div>
         </div>
         <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item" ng-repeat="essence in essencelist track by $index" ng-click="blogdetails(essence.blogId)">{{essence.title}}</li>
         </ul>
     </div>
     <div class="left_classify">
@@ -30,9 +26,9 @@
             </div>
         </div>
         <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item" ng-click="findtype('技术')">技术</li>
+            <li class="list-group-item" ng-click="findtype('生活')">生活</li>
+            <li class="list-group-item" ng-click="findtype('其他')">其他</li>
         </ul>
     </div>
 </div>

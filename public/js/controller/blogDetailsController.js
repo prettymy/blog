@@ -6,9 +6,10 @@ myBlogApp.controller('blogDetailsController',['$scope','$stateParams','Date','Gu
         .then(function(res){
             $scope.title = res.title;
             $scope.time = res.time;
-            $scope.content = res.content;
+           /* $scope.content = res.content;*/
             $scope.type = res.type;
             $scope.author = res.author;
+            $('.content').append(res.content);
             transData.postData({blogId:$stateParams.blogid,pageView:res.pageView+1},'/pageviewupdate')
                 .then(function(res){
                     console.log(res);
@@ -24,7 +25,9 @@ myBlogApp.controller('blogDetailsController',['$scope','$stateParams','Date','Gu
             content:$scope.comment,
             blogId:$stateParams.blogid,
             time:nowtime,
-            messageId:Guid.Guid()
+            messageId:Guid.Guid(),
+            type:'文章留言',
+            title:$scope.title
         }
         transData.postData(commentdata,'/messageinsert')
             .then(function(res){

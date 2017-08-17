@@ -14,20 +14,20 @@
 .qy_con>p{ float:left;display:block; line-height:18px; padding-left:5px;width:90%; margin-left:16px; color:#9c9c9c; margin-top:2px; margin-bottom:0}
 
 /*产品管理*/
-.cp_title{width:97%; padding:0 0.5%; margin-left:1%; float:left;border-left:solid 2px #06C; height:18px; margin-top:10px}
+.cp_title{padding:0 0.5%;/* margin-left:1%;*/ float:left;border-left:solid 2px #06C; height:18px; margin-top:10px}
 .add_cp{width:97%; float:left; margin-left:1.5%;height:50px; margin-top:15px}
 .add_cp>a{width:125px;height:45px; float:left; background:#0c89ff; color:#fff; text-align:center; line-height:45px; font-size:18px; text-decoration:none}
 .add_cp>a:hover{ text-decoration:none; color:#fff}
 .add_cp>a:focus{color:#fff; text-decoration:none}
 
-.table_con{width:83%; float:left;margin-left:15.5%; display:block; height:auto; margin-top:10px; padding-bottom:80px}
-.table_con table{width:100% ;table-layout:fixed;}
+.table_con{ float:left;display:block; height:auto; margin-top:10px; padding-bottom:80px}
+.table_con table{width:100% ;table-layout:fixed;text-align: center}
 .table_con table tbody tr.tb_title{background:#eff3f5; height:45px; border-bottom:none}
 .table_con table tbody tr.tb_title td{height:25px; line-height:25px; border-left:solid 1px #e2e5e6; float:left; margin-top:10px}
 .table_con table tbody tr.tb_title td:first-child{border-left:none}
 
 .table_con table tbody tr{height:45px; border-bottom:solid 1px #e7e7e7}
-.table_con table tbody tr td{height:30px; line-height:30px; float:left; margin-top:8px;word-break:keep-all;/* 不换行 */
+.table_con table tbody tr td{ float:left;word-break:keep-all;/* 不换行 */
     white-space:nowrap;/* 不换行 */  
     overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */  
     text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用*/   }

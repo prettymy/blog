@@ -8,7 +8,9 @@ var messageSchema = new Schema({
     content:String,
     time:String,
     blogId:String,
-    messageId:String
+    messageId:String,
+    type:String,
+    title:String
 });
 var Messages = mongoose.model('Messages', messageSchema);
 exports.insert = function(request,response){
@@ -41,14 +43,54 @@ exports.list = function(request,response){
         }
     });
 }
-exports.alllist = function(request,response){
-    Messages.find(function(err,res){
+exports.alllist = function(req,res){
+    var page=req.body.currpage;
+    var rows=req.body.rows;
+    var skipFrom = (page-1) *rows;
+    var query = Messages.find().sort({'_id':-1}).skip(skipFrom).limit(rows);
+    query.exec(function(err,rs){
         if (err) {
             console.log("Error:" + err);
         }
         else{
-            console.log(res);
-            response.end(JSON.stringify(res));
+            Messages.find(function(err,result){
+                var jsonArray={rows:rs,total:result.length};
+                res.end(JSON.stringify(jsonArray));
+            });
+        }
+    });
+}
+exports.systemlist = function(req,res){
+    var page=req.body.currpage;
+    var rows=req.body.rows;
+    var skipFrom = (page-1) *rows;
+    var query = Messages.find({type:'网站留言'}).skip(skipFrom).limit(rows);
+    query.exec(function(err,rs){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else{
+            Messages.find({type:'网站留言'},function(err,result){
+                var jsonArray={rows:rs,total:result.length};
+                res.end(JSON.stringify(jsonArray));
+            });
+        }
+    });
+}
+exports.bloglist = function(req,res){
+    var page=req.body.currpage;
+    var rows=req.body.rows;
+    var skipFrom = (page-1) *rows;
+    var query = Messages.find({type:'文章留言'}).skip(skipFrom).limit(rows);
+    query.exec(function(err,rs){
+        if (err) {
+            console.log("Error:" + err);
+        }
+        else{
+            Messages.find({type:'文章留言'},function(err,result){
+                var jsonArray={rows:rs,total:result.length};
+                res.end(JSON.stringify(jsonArray));
+            });
         }
     });
 }
@@ -60,7 +102,7 @@ exports.delete = function(request,response){
         }else{
             response.end(JSON.stringify({
                 status:'succ',
-                message:'ɾ���ɹ�'
+                message:'删除成功'
             }));
         }
     })

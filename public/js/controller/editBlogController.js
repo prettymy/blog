@@ -8,31 +8,38 @@
  * Created by lmy on 2017/2/6.
  */
 myBlogApp.controller('editBlogController',['$scope','transData','Date','$stateParams','$state',function($scope,transData,Date,$stateParams,$state){
+    /*document.location.reload();*/
+    var ue = UE.getEditor('editor2',{
+        initialFrameWidth : 1000
+    });
     transData.postData({blogId:$stateParams.blogid},'/oneblog')
         .then(function(res){
             $scope.title = res.title;
-            $scope.content = res.content;
+            ue.addListener("ready", function () {
+                // editorå‡†å¤‡å¥½ä¹‹åæ‰å¯ä»¥ä½¿ç”¨
+                ue.setContent(res.content);
+            });
+          /*  $scope.content = res.content;*/
             $scope.type = res.type;
             $scope.author = res.author;
             $('.cedit').focus();
         });
-    //¸üĞÂÎÄÕÂ
+    //æ›´æ–°æ–‡ç« 
     $scope.cupdate = function(){
-        console.log('¸üĞÂ');
+        console.log('æ›´æ–°');
         var nowtime = Date.getNowFormatDate();
         var data = {
             title:$scope.title,
-            content:$scope.content,
+            content:ue.getContent(),
             type:$scope.type,
             time:nowtime,
             author:$scope.author,
             blogId:$stateParams.blogid,
             isChecked:'false'
         }
-
         transData.postData(data,'/blogupdate')
             .then(function(res){
-                alert('¸üĞÂ³É¹¦£¡');
+                alert('æ›´æ–°æˆåŠŸï¼');
                 $state.go('mindex.blogManager');
             })
     };

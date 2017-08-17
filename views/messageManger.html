@@ -4,28 +4,29 @@
         <a href="../addBlog.html">添加博文</a>
     </div>-->
     <div class="table_con">
-        <table>
-            <tr class="tb_title">
-                <td>留言文章</td>
-                <td>内容</td>
-                <td>发布时间</td>
-                <td>操作</td>
+        <table class="table table-hover">
+            <tr>
+                <td width="20%">留言类型</td>
+                <td width="20%">留言文章</td>
+                <td width="20%">内容</td>
+                <td width="20%">发布时间</td>
+                <td width="20%">操作</td>
             </tr>
             <!-- <tbody id="blogList">
 
              </tbody>-->
             <tr ng-repeat="message in messagelist">
-                <td>{{message.title}}</td>
-                <td>{{message.content}}</td>
-                <td>{{message.time}}</td>
-                <td>
-                    <a class='sj_btn' ng-click="messageDetails(message.blogId)">查看</a>
+                <td width="20%">{{message.type}}</td>
+                <td width="20%">{{message.title}}</td>
+                <td width="20%">{{message.content}}</td>
+                <td width="20%">{{message.time}}</td>
+                <td width="20%">
+                    <a class='sj_btn' ng-click="messageDetails(message.blogId)" style="margin-left: 55px">查看</a>
                     <a class='del_btn' ng-click="messageDel(message.messageId)">删除</a>
                 </td>
             </tr>
         </table>
-        <ul class="pager" id="pager">
-        </ul>
+        <my-pagination page-option="option"></my-pagination>
         <br>
     </div>
 </div>

@@ -11,7 +11,9 @@ myBlogApp.controller('registerController',['$scope','transData','$state',functio
         transData.postData(data,'/register')
             .then(function(data){
                 if(data.status=='succ'){
-                    $state.go('login');
+                    $state.go('login',{name:data.username,pass:data.password});
+                }else{
+                    alert(data.message);
                 }
             })
     };

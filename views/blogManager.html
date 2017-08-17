@@ -1,19 +1,19 @@
 <div>
 <span class="cp_title">博文管理</span>
-<!--<div class="add_cp">
-    <a href="../addBlog.html">添加博文</a>
-</div>-->
+<div class="input-group" style="margin-top:8px;float: right">
+    <input type="text" class="form-control" style="width:300px" placeholder="search blog" aria-describedby="basic-addon2" ng-model="searchtitle"><span class="input-group-addon" id="basic-addon2" style="width:53px;cursor: pointer" ng-click="search()">搜索</span>
+</div>
 <div class="table_con">
-    <table>
-        <tr class="tb_title">
+    <table class="table table-hover">
+        <tr>
             <td width="10%">类别</td>
             <td width="15%">题目</td>
             <td width="10%">作者</td>
-            <td width="12%">发布时间</td>
-            <td width="10%">内容</td>
+            <td width="15%">发布时间</td>
+            <!--<td width="10%">内容</td>-->
             <td width="10%">浏览量</td>
-            <td width="10%">审核状态</td>
-            <td width="16%">操作</td>
+            <td width="20%">审核状态</td>
+            <td width="20%">操作</td>
         </tr>
        <!-- <tbody id="blogList">
 
@@ -22,22 +22,21 @@
             <td width="10%">{{blog.type}}</td>
             <td width="15%">{{blog.title}}</td>
             <td width="10%">{{blog.author}}</td>
-            <td width="12%">{{blog.time}}</td>
-            <td width="10%">{{blog.content}}</td>
+            <td width="15%">{{blog.time}}</td>
+            <!--<my-td data="blog"></my-td>-->
+           <!-- <td width="10%" class="content"></td>-->
             <td width="10%">{{blog.pageView}}</td>
-            <td width="10%" ng-if="blog.isChecked=='false'">未审核</td>
-            <td width="10%" ng-if="blog.isChecked=='true'">已审核</td>
-            <td width="16%">
+            <td width="20%" ng-if="blog.isChecked=='false'">未审核</td>
+            <td width="20%" ng-if="blog.isChecked=='true'">已审核</td>
+            <td width="20%">
                 <span class="glyphicon glyphicon-pencil" ng-click="blogedit(blog.blogId)"></span>
                <!-- <a class='bj_btn' ng-click="blogedit(blog.blogId)">编辑</a>-->
-                <span class='glyphicon glyphicon-list-alt' ng-click="mblogdetails(blog.blogId)"></span>
                 <span class='glyphicon glyphicon-trash' ng-click="blogdel(blog.blogId)"></span>
-                <a class=""></a>
+                <span class="glyphicon glyphicon glyphicon-film" ng-click="blogdetails(blog.blogId)"></span>
             </td>
         </tr>
     </table>
-    <ul class="pager" id="pager">
-    </ul>
+    <my-pagination page-option="option"></my-pagination>
     <br>
 </div>
 </div>
